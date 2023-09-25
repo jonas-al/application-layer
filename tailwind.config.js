@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'Croissant': ['Croissant One', 'sans-serif']
+    },
     extend: {},
   },
   plugins: [],
