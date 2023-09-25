@@ -39,7 +39,7 @@ const Lyrics = () => {
         </div> 
         :
         !lyrics ? <div className="flex flex-col gap-8 items-center justify-center">
-          <p>{music}</p>
+          <div className='text-justify' dangerouslySetInnerHTML={{__html: music.replaceAll('\n', '<br />')}} />
           <div className='flex gap-1'>
             <Input placeholder='Digite o ID de alguma música da lista acima' width={430} onChange={(e) => setLyricsId(e.target.value)} />
             <Button colorScheme='green' onClick={getLyric}>
@@ -47,7 +47,13 @@ const Lyrics = () => {
             </Button>
           </div>
         </div>
-        : <p>{lyrics}</p>}
+        : 
+        <div className="flex flex-col gap-6">
+          <Button colorScheme='yellow' width={70} onClick={() => navigate('/')}>
+              Voltar
+          </Button>
+          <div dangerouslySetInnerHTML={{__html: lyrics}} />
+        </div> }
     </div>
   )
 }

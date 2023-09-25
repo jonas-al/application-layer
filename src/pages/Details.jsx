@@ -29,8 +29,13 @@ const Details = () => {
             Voltar
           </Button>
         </div> 
-        :
-        <p>{details}</p>}
+        : 
+        <div className="flex flex-col gap-6">
+          <Button colorScheme='yellow' width={70} onClick={() => navigate('/')}>
+              Voltar
+          </Button>
+          <div dangerouslySetInnerHTML={{__html: details}} />
+        </div>}
     </div>
   )
 }

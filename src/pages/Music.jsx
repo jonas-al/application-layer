@@ -30,7 +30,12 @@ const Music = () => {
           </Button>
         </div> 
         :
-        <p>{music}</p>}
+        <div className="flex flex-col gap-6">
+          <Button colorScheme='yellow' width={70} onClick={() => navigate('/')}>
+              Voltar
+          </Button>
+          <div className='text-justify' dangerouslySetInnerHTML={{__html: music.replaceAll('\n', '<br />')}} />
+        </div>}
     </div>
   )
 }
